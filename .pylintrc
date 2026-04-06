@@ -1,6 +1,16 @@
 [MASTER]
 # Указываем, где искать модули, чтобы избежать ошибок импорта (F0001)
 init-hook='import sys; sys.path.append(".")'
+[MASTER]
+# Добавляет текущую папку в пути поиска
+init-hook='import sys; sys.path.append(".")'
+
+[MESSAGES CONTROL]
+# Отключаем слишком дотошные проверки, если нужно
+disable=
+    missing-module-docstring,
+    missing-function-docstring,
+    too-few-public-methods
 
 [MESSAGES CONTROL]
 # Отключаем самые назойливые проверки для автотестов:
