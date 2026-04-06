@@ -1,16 +1,20 @@
 ini
 [MASTER]
+# Указываем линтеру, где искать ваши модули
 init-hook='import sys; sys.path.append(".")'
 
 [MESSAGES CONTROL]
 disable=
-    C0114, # missing-module-docstring
-    C0115, # missing-class-docstring
-    C0116, # missing-function-docstring
-    R0903, # too-few-public-methods
-    C0411, # wrong-import-order
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    import-error,
+    invalid-name,
+    wrong-import-order
+
+[REPORTS]
+output-format=colorized
 
 [BASIC]
-(SEARCH_INPUT и т.д.)
-class-attribute-naming-style=any
-attr-naming-style=any
+class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{2,30}|(_?[A-Z][A-Z0-9_]*))$
