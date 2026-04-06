@@ -27,3 +27,9 @@ jobs:
         export PYTHONPATH=$PYTHONPATH:$(pwd)
         # Запускаем через python -m для корректного разрешения путей
         python -m pylint $(git ls-files '*.py')
+
+
+    - name: Analysing the code with pylint
+      run: |
+        export PYTHONPATH=$(pwd)
+        pylint $(find . -name "*.py" -not -path "./venv/*")
