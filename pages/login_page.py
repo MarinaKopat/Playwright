@@ -3,12 +3,12 @@ from .base_page import BasePage
 
 
 class LoginPage(BasePage):
-    EMAIL_FIELD = "//input[@type='email' or contains(@placeholder, 'Email')]"
-    PASSWORD_FIELD = "//input[@type='password' or contains(@placeholder, 'Пароль')]"
-    LOGIN_BUTTON = "//button"
+    EMAIL_FIELD = "input[type='email']"
+    PASSWORD_FIELD = "input[type='password']"
+    LOGIN_BUTTON = "button:has-text('Войти')"
 
     @allure.step("Авторизация пользователем {email}")
     def login(self, email, password):
-        self.send_keys(self.EMAIL_FIELD, email)
-        self.send_keys(self.PASSWORD_FIELD, password)
-        self.click(self.LOGIN_BUTTON)
+        self.page.fill(self.EMAIL_FIELD, email)
+        self.page.fill(self.PASSWORD_FIELD, password)
+        self.page.click(self.LOGIN_BUTTON)

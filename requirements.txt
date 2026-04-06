@@ -14,7 +14,7 @@ pytest-sugar==1.1.1
 pytest-base-url==2.1.0
 pytest-bdd==8.1.0
 pytest-rerunfailures==16.1
-pytest-selenium==4.1.0
+#pytest-selenium==4.1.0
 requests==2.32.5
 pytest-clarity==1.0.1
 pytest_check==2.6.2

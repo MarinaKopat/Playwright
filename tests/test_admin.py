@@ -9,6 +9,7 @@ URL = "http://localhost:3000/login"
 ADMIN_URL = "http://localhost:3000/admin"
 
 
+@pytest.mark.only
 @allure.feature("Админ-панель")
 @allure.story("Проверка прав доступа")
 class TestAdminExpect:
