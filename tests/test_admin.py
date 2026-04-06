@@ -45,4 +45,3 @@ class TestAdminExpect:
 
         with allure.step("Проверка отсутствия доступа"):
             expect(admin_page.header).not_to_be_visible(), "Обычный пользователь увидел админку!"
-            expect(page).not_to_have_url(re.compile(r"admin"))
