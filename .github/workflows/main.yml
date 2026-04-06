@@ -30,3 +30,5 @@ jobs:
         retention-days: 30
     - name: Run Playwright tests
       run: python -m pytest
+    - name: Run Playwright tests
+      run: python -m pytest -p no:selenium
