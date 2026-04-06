@@ -1,28 +1,19 @@
 ini
 [MASTER]
-# Указываем пути, чтобы Pylint видел ваши папки с кодом
-init-hook='import sys; sys.path.extend([".", "pages", "tests"])'
-# Игнорировать дублирование кода в тестах (частое явление)
-ignore=tests
+# Поможет Pylint находить ваши модули в подпапках
+init-hook='import sys; sys.path.append(".")'
 
 [MESSAGES CONTROL]
-# Отключаем слишком строгие правила для тестовых проектов
+# Отключаем самые назойливые проверки, которые не критичны для тестов
 disable=
-    C0114, # missing-module-docstring
-    C0115, # missing-class-docstring
-    C0116, # missing-function-docstring
-    R0903, # too-few-public-methods (актуально для Page Object)
-    C0103, # invalid-name (если любите CAPS для локаторов)
-    W0511, # fixme (чтобы TODO не висели в ошибках)
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    invalid-name,
+    import-error,          # Если линтер в CI не видит установленные пакеты
+    wrong-import-order     # Если не хочется вручную сортировать импорты
 
 [REPORTS]
-# Не выводить огромный отчет со статистикой, только ошибки
+# Убираем лишнюю статистику в выводе
 reports=no
-
-[BASIC]
-# Разрешаем чуть более длинные строки (по умолчанию 100)
-max-line-length=120
-
-[VARIABLES]
-# Список имен, которые могут быть короткими (например, 'e' для исключений)
-good-names=i,j,k,ex,Run,_,e
