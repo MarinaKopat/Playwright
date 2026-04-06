@@ -1,4 +1,3 @@
-ini
 [MASTER]
 # Поможет Pylint находить ваши модули в подпапках
 init-hook='import sys; sys.path.append(".")'
