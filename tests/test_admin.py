@@ -27,7 +27,7 @@ class TestAdminExpect:
             page.wait_for_timeout(5000)
 
         with allure.step("Проверка видимости заголовка админки"):
-            expect(admin_page.header).to_be_visible(), "Заголовок админ-панели не найден!"
+            expect(admin_page.header, "Заголовок не найден").to_be_visible()
 
     @allure.title("Запрет доступа для не-админа")
     def test_non_admin_expect_denied(self, page):
