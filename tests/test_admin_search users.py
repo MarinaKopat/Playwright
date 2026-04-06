@@ -2,7 +2,7 @@ import allure
 import pytest
 from pages.login_page import LoginPage
 from pages.search_users_page import SearchUsers
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 
 URL = "http://localhost:3000/login"
 ADMIN_URL = "http://localhost:3000/admin"

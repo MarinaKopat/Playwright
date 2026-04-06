@@ -2,7 +2,7 @@ import allure
 import pytest
 from pages.dashboard_page import DashboardPage
 from pages.login_page import LoginPage
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 
 URL = "http://localhost:3000/dashboard"
 

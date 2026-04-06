@@ -1,6 +1,3 @@
-from .base_page import BasePage
-
-
 class AdminPage:
     def __init__(self, page):
         self.page = page
