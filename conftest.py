@@ -1,10 +1,10 @@
-import allure
+"""Конфигурация тестов и кастомные опции pytest"""
 import os
 import pytest
-from playwright.sync_api import Page
 
 
 def pytest_addoption(parser):
+    """Добавление кастомных аргументов командной строки"""
     parser.addoption(
         "--br",
         action="store",
@@ -28,9 +28,6 @@ def pytest_addoption(parser):
         default="en",
         help="Locale to run tests in (e.g. en, ru).",
     )
-
-
-
 
 
 @pytest.fixture(scope="session")
